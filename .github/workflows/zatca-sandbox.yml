@@ -1,0 +1,21 @@
+# Live check against ZATCA's public developer-portal sandbox: issues a
+# compliance CSID for the demo CSR, signs chained invoices and submits them.
+# Calls an external API, so it only runs on demand.
+name: ZATCA sandbox
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sandbox:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: zatca
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run sandbox

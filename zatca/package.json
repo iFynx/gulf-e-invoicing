@@ -1,0 +1,46 @@
+{
+  "name": "@ifynx/zatca-phase2",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "ZATCA Phase 2 (Fatoora) simplified tax invoice engine: UBL 2.1 XML, invoice hash, ECDSA secp256k1 signature, XAdES block and 9-tag QR. Browser + Node.",
+  "main": "src/engine.js",
+  "license": "MIT",
+  "author": "iFynx Integrated Solutions P.S.C. (https://ifynx.com)",
+  "homepage": "https://ifynx.com/zatca-e-invoicing-integration/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iFynx/gulf-e-invoicing.git",
+    "directory": "zatca"
+  },
+  "keywords": [
+    "zatca",
+    "fatoora",
+    "e-invoicing",
+    "saudi-arabia",
+    "ubl",
+    "qr",
+    "phase-2",
+    "einvoice"
+  ],
+  "scripts": {
+    "test": "node test/offline.mjs",
+    "sandbox": "node test/sandbox.mjs",
+    "example": "node examples/sign-invoice.mjs"
+  },
+  "dependencies": {
+    "@noble/secp256k1": "2.3.0"
+  },
+  "exports": {
+    ".": "./src/engine.js",
+    "./node": "./src/certinfo.mjs"
+  },
+  "types": "src/engine.d.ts",
+  "files": [
+    "src",
+    "keys",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}
