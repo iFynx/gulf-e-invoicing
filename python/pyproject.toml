@@ -7,7 +7,7 @@ name = "gulf-einvoicing"
 version = "0.1.0"
 description = "Saudi ZATCA Phase 2 (Fatoora) signing + QR and UAE Peppol PINT AE e-invoices, byte-identical to the iFynx JavaScript engines."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "iFynx Integrated Solutions P.S.C.", email = "contact@ifynx.com" }]

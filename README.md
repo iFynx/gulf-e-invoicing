@@ -8,7 +8,7 @@ One engine, three languages: JavaScript, Python and PHP, tested to produce ident
 [![CI](https://github.com/iFynx/gulf-e-invoicing/actions/workflows/ci.yml/badge.svg)](https://github.com/iFynx/gulf-e-invoicing/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Node%20%E2%89%A520%20%2B%20browser-F7DF1E)
-![Python](https://img.shields.io/badge/Python-%E2%89%A53.9-3776AB)
+![Python](https://img.shields.io/badge/Python-%E2%89%A53.10-3776AB)
 ![PHP](https://img.shields.io/badge/PHP-%E2%89%A58.1-777BB4)
 ![ZATCA](https://img.shields.io/badge/ZATCA-Phase%202-0E7C3A)
 ![UAE](https://img.shields.io/badge/UAE-PINT%20AE%201.0.5-C8102E)
@@ -37,7 +37,7 @@ No network calls, no telemetry, no tracking. Your invoice data never leaves the 
 | Language | Package | Install |
 |---|---|---|
 | JavaScript / TypeScript | [`@ifynx/zatca-phase2`](zatca), [`@ifynx/uae-pint-ae`](uae-pint-ae) | `npm install @ifynx/zatca-phase2 @ifynx/uae-pint-ae` |
-| Python 3.9+ | [`gulf-einvoicing`](python) | `pip install gulf-einvoicing` |
+| Python 3.10+ | [`gulf-einvoicing`](python) | `pip install gulf-einvoicing` |
 | PHP 8.1+ (Laravel, Symfony, WooCommerce) | [`ifynx/gulf-e-invoicing`](php) | `composer require ifynx/gulf-e-invoicing` |
 
 All three ports are checked against the same [test vectors](test-vectors): the XML, invoice hash, XAdES properties and QR payload must match **byte for byte**. JavaScript and Python even produce the same signature bytes (RFC 6979 deterministic ECDSA with low-S); PHP signs through OpenSSL and is verified against the same key.
@@ -152,7 +152,7 @@ cd python && pip install -e ".[test]" && pytest   # Python port vs shared vector
 composer install && composer test                 # PHP port vs shared vectors
 ```
 
-CI runs JavaScript on Node 20 and 22, Python 3.9 to 3.13, PHP 8.1 to 8.4 and the official UAE Schematron on every push. The ZATCA sandbox workflow runs on demand because it calls ZATCA's public API.
+CI runs JavaScript on Node 20 and 22, Python 3.10 to 3.13, PHP 8.1 to 8.4 and the official UAE Schematron on every push. The ZATCA sandbox workflow runs on demand because it calls ZATCA's public API.
 
 ## Scope and honest limits
 
