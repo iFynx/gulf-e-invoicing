@@ -9,7 +9,7 @@
   "homepage": "https://ifynx.com/uae-e-invoicing-integration/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iFynx/gulf-e-invoicing.git",
+    "url": "git+https://github.com/iFynx/gulf-e-invoicing.git",
     "directory": "uae-pint-ae"
   },
   "keywords": [

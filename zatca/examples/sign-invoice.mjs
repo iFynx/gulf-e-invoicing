@@ -11,7 +11,7 @@ const key = rawPrivateKey(readFileSync(keyPath, 'utf8'));
 
 // Use your CSID certificate (base64 body) in production. For a local run we
 // self-sign one from the demo key so the example works offline.
-const pem = execFileSync('openssl', ['req', '-x509', '-key', keyPath, '-subj', '/CN=example', '-days', '1'], { input: '' }).toString();
+const pem = execFileSync('openssl', ['req', '-new', '-x509', '-key', keyPath, '-subj', '/CN=example', '-days', '1'], { input: '' }).toString();
 const cert = certInfo(pem.replace(/-----[^-]+-----/g, '').replace(/\s+/g, ''));
 
 const invoice = {

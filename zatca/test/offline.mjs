@@ -10,7 +10,7 @@ import { certInfo, rawPrivateKey } from '../src/certinfo.mjs';
 
 const dir = new URL('..', import.meta.url).pathname;
 const key = rawPrivateKey(readFileSync(dir + 'keys/demo-private-key.pem', 'utf8'));
-const certPem = process.env.CERT || execFileSync('openssl', ['req', '-x509', '-key', dir + 'keys/demo-private-key.pem', '-subj', '/CN=test', '-days', '1'], { input: '' }).toString();
+const certPem = process.env.CERT || execFileSync('openssl', ['req', '-new', '-x509', '-key', dir + 'keys/demo-private-key.pem', '-subj', '/CN=test', '-days', '1'], { input: '' }).toString();
 const cert = certInfo(certPem.replace(/-----[^-]+-----/g, '').replace(/\s+/g, ''));
 
 export const sample = {
