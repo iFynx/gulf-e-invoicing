@@ -26,7 +26,8 @@
     "test": "node test/offline.mjs",
     "samples": "node test/samples.mjs",
     "validate": "node test/samples.mjs && bash validate/run.sh",
-    "example": "node examples/build-invoice.mjs"
+    "example": "node examples/build-invoice.mjs",
+    "vectors": "node test/vectors.mjs"
   },
   "exports": {
     ".": "./src/engine.js"
@@ -34,9 +35,16 @@
   "types": "src/engine.d.ts",
   "files": [
     "src",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/iFynx/gulf-e-invoicing/issues"
   }
 }

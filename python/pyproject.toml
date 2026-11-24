@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gulf-einvoicing"
+version = "0.1.0"
+description = "Saudi ZATCA Phase 2 (Fatoora) signing + QR and UAE Peppol PINT AE e-invoices, byte-identical to the iFynx JavaScript engines."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "iFynx Integrated Solutions P.S.C.", email = "contact@ifynx.com" }]
+keywords = ["zatca", "fatoora", "e-invoicing", "einvoice", "saudi-arabia", "uae", "peppol", "pint-ae", "ubl", "xades", "vat"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Natural Language :: Arabic",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Office/Business :: Financial :: Accounting",
+  "Typing :: Typed",
+]
+dependencies = ["cryptography>=44"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/iFynx/gulf-e-invoicing"
+Documentation = "https://github.com/iFynx/gulf-e-invoicing/tree/main/python#readme"
+Source = "https://github.com/iFynx/gulf-e-invoicing"
+Issues = "https://github.com/iFynx/gulf-e-invoicing/issues"
+"ZATCA demo" = "https://ifynx.com/zatca-e-invoicing-integration/"
+"UAE demo" = "https://ifynx.com/uae-e-invoicing-integration/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gulf_einvoicing"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -3,11 +3,13 @@
 # Gulf e-Invoicing Toolkit
 
 **Open-source building blocks for Saudi ZATCA Phase 2 and UAE Peppol PINT AE e-invoices.**
-Pure JavaScript, zero servers, runs in the browser and in Node.js.
+One engine, three languages: JavaScript, Python and PHP, tested to produce identical bytes.
 
 [![CI](https://github.com/iFynx/gulf-e-invoicing/actions/workflows/ci.yml/badge.svg)](https://github.com/iFynx/gulf-e-invoicing/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-![Node](https://img.shields.io/badge/node-%E2%89%A520-339933)
+![JavaScript](https://img.shields.io/badge/JavaScript-Node%20%E2%89%A520%20%2B%20browser-F7DF1E)
+![Python](https://img.shields.io/badge/Python-%E2%89%A53.9-3776AB)
+![PHP](https://img.shields.io/badge/PHP-%E2%89%A58.1-777BB4)
 ![ZATCA](https://img.shields.io/badge/ZATCA-Phase%202-0E7C3A)
 ![UAE](https://img.shields.io/badge/UAE-PINT%20AE%201.0.5-C8102E)
 
@@ -30,6 +32,16 @@ E-invoicing is now mandatory or arriving fast across the Gulf, yet most develope
 
 No network calls, no telemetry, no tracking. Your invoice data never leaves the machine that runs the code.
 
+## Install
+
+| Language | Package | Install |
+|---|---|---|
+| JavaScript / TypeScript | [`@ifynx/zatca-phase2`](zatca), [`@ifynx/uae-pint-ae`](uae-pint-ae) | `npm install @ifynx/zatca-phase2 @ifynx/uae-pint-ae` |
+| Python 3.9+ | [`gulf-einvoicing`](python) | `pip install gulf-einvoicing` |
+| PHP 8.1+ (Laravel, Symfony, WooCommerce) | [`ifynx/gulf-e-invoicing`](php) | `composer require ifynx/gulf-e-invoicing` |
+
+All three ports are checked against the same [test vectors](test-vectors): the XML, invoice hash, XAdES properties and QR payload must match **byte for byte**. JavaScript and Python even produce the same signature bytes (RFC 6979 deterministic ECDSA with low-S); PHP signs through OpenSSL and is verified against the same key.
+
 ## Quick start
 
 ```sh
@@ -43,10 +55,36 @@ cd zatca && npm ci && npm run example
 cd ../uae-pint-ae && npm run example
 ```
 
+<details>
+<summary><b>Python</b></summary>
+
+```python
+from gulf_einvoicing import zatca, uae_pint_ae
+
+signed = zatca.sign_invoice(invoice, zatca.load_private_key(pem), zatca.cert_info(cert_b64))
+signed.xml, signed.qr, signed.invoice_hash
+
+xml = uae_pint_ae.invoice_xml(uae_invoice)
+```
+</details>
+
+<details>
+<summary><b>PHP</b></summary>
+
+```php
+use IFynx\GulfEInvoicing\Zatca\{Invoice, Certificate};
+
+$signed = Invoice::sign($invoice, Invoice::loadPrivateKey($pem), Certificate::fromBase64($certB64));
+$signed->xml; $signed->qr; $signed->invoiceHash;
+
+$xml = \IFynx\GulfEInvoicing\UaePintAe\Invoice::xml($uaeInvoice);
+```
+</details>
+
 ### ZATCA in 15 lines
 
 ```js
-import { signInvoice, FIRST_PIH } from './zatca/src/engine.js';
+import { signInvoice, FIRST_PIH } from "@ifynx/zatca-phase2";
 
 const signed = await signInvoice({
   number: 'INV-0001', uuid: crypto.randomUUID(),
@@ -66,7 +104,7 @@ signed.invoiceHash;  // keep it: it is the PIH of your next invoice
 ### UAE PINT AE in 10 lines
 
 ```js
-import { invoiceXml, check } from './uae-pint-ae/src/engine.js';
+import { invoiceXml, check } from "@ifynx/uae-pint-ae";
 
 const results = check(invoice);          // [{ id: 'IBR-132-AE', ok: true }, ...]
 if (results.every((r) => r.ok)) {
@@ -110,9 +148,11 @@ cd zatca && npm test              # hash, signature, QR and XML checks (offline)
 cd zatca && npm run sandbox       # live check against ZATCA's public sandbox
 cd uae-pint-ae && npm test        # totals, rules, escaping (offline)
 cd uae-pint-ae && npm run validate  # official PINT AE Schematron (needs Java 17+)
+cd python && pip install -e ".[test]" && pytest   # Python port vs shared vectors
+composer install && composer test                 # PHP port vs shared vectors
 ```
 
-CI runs the offline suites on Node 20 and 22 and the official UAE Schematron on every push. The ZATCA sandbox workflow runs on demand because it calls ZATCA's public API.
+CI runs JavaScript on Node 20 and 22, Python 3.9 to 3.13, PHP 8.1 to 8.4 and the official UAE Schematron on every push. The ZATCA sandbox workflow runs on demand because it calls ZATCA's public API.
 
 ## Scope and honest limits
 
@@ -146,7 +186,7 @@ This toolkit is maintained by **[iFynx](https://ifynx.com)**, a software company
 
 ### ما هذا المشروع؟
 
-**مجموعة أدوات مفتوحة المصدر للفوترة الإلكترونية في الخليج**، مكتوبة بـ JavaScript خالص، تعمل في المتصفح وفي Node.js بدون أي خادم:
+**مجموعة أدوات مفتوحة المصدر للفوترة الإلكترونية في الخليج**، بثلاث لغات: JavaScript و Python و PHP، تعمل بدون أي خادم:
 
 | الحزمة | ماذا تفعل | تم التحقق منها عبر |
 |---|---|---|
@@ -158,10 +198,12 @@ This toolkit is maintained by **[iFynx](https://ifynx.com)**, a software company
 ### البدء السريع
 
 ```sh
-git clone https://github.com/iFynx/gulf-e-invoicing.git
-cd gulf-e-invoicing/zatca && npm ci && npm run example
-cd ../uae-pint-ae && npm run example
+npm install @ifynx/zatca-phase2 @ifynx/uae-pint-ae   # JavaScript
+pip install gulf-einvoicing                          # Python
+composer require ifynx/gulf-e-invoicing              # PHP
 ```
+
+النسخ الثلاث تُختبر على نفس الفواتير المرجعية، ويجب أن تُخرج نفس الـ XML ونفس البصمة ونفس رمز QR حرفاً بحرف.
 
 ### الحدود بصراحة
 

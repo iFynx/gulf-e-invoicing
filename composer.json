@@ -1,0 +1,35 @@
+{
+    "name": "ifynx/gulf-e-invoicing",
+    "description": "Saudi ZATCA Phase 2 (Fatoora) signing, XAdES and QR plus UAE Peppol PINT AE e-invoices for PHP, byte-identical to the iFynx JavaScript and Python engines.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["zatca", "fatoora", "e-invoicing", "einvoice", "saudi-arabia", "uae", "peppol", "pint-ae", "ubl", "xades", "vat", "qr"],
+    "homepage": "https://github.com/iFynx/gulf-e-invoicing",
+    "support": {
+        "issues": "https://github.com/iFynx/gulf-e-invoicing/issues",
+        "source": "https://github.com/iFynx/gulf-e-invoicing",
+        "docs": "https://github.com/iFynx/gulf-e-invoicing/tree/main/php#readme"
+    },
+    "authors": [
+        { "name": "iFynx Integrated Solutions P.S.C.", "email": "contact@ifynx.com", "homepage": "https://ifynx.com" }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "ext-openssl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5 || ^11.0"
+    },
+    "autoload": {
+        "psr-4": { "IFynx\\GulfEInvoicing\\": "php/src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "IFynx\\GulfEInvoicing\\Tests\\": "php/tests/" }
+    },
+    "scripts": {
+        "test": "phpunit -c php/phpunit.xml"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

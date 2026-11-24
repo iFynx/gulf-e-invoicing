@@ -1,0 +1,591 @@
+{
+ "cases": [
+  {
+   "invoice": {
+    "uuid": "4b6000ca-0128-4bdc-99a6-406f2909247f",
+    "issueDate": "2026-11-21",
+    "dueDate": "2026-12-21",
+    "seller": {
+     "name": "iFynx Demo Trading LLC",
+     "trn": "135790246801003",
+     "license": "112345678900003",
+     "authority": "Dubai Department of Economy and Tourism",
+     "street": "Sheikh Zayed Road",
+     "city": "Dubai",
+     "emirate": "DXB",
+     "iban": "AE070331234567890123456"
+    },
+    "buyer": {
+     "name": "Sample Customer LLC",
+     "trn": "134567890123003",
+     "license": "112345679000001",
+     "authority": "Abu Dhabi Department of Economic Development",
+     "street": "Corniche Road",
+     "city": "Abu Dhabi",
+     "emirate": "AUH"
+    },
+    "number": "AE-1",
+    "flags": "00000000",
+    "lines": [
+     {
+      "name": "Laptop computer",
+      "hs": "847130",
+      "qty": 2,
+      "price": 3200
+     },
+     {
+      "name": "Laser printer",
+      "hs": "844332",
+      "qty": 1,
+      "price": 850
+     }
+    ]
+   },
+   "totals": {
+    "rows": [
+     {
+      "name": "Laptop computer",
+      "hs": "847130",
+      "qty": 2,
+      "price": 3200,
+      "net": 6400,
+      "vat": 320,
+      "gross": 6720
+     },
+     {
+      "name": "Laser printer",
+      "hs": "844332",
+      "qty": 1,
+      "price": 850,
+      "net": 850,
+      "vat": 42.5,
+      "gross": 892.5
+     }
+    ],
+    "net": 7250,
+    "vat": 362.5,
+    "gross": 7612.5
+   },
+   "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\">\n    <cbc:CustomizationID>urn:peppol:pint:billing-1@ae-1</cbc:CustomizationID>\n    <cbc:ProfileID>urn:peppol:bis:billing</cbc:ProfileID>\n    <cbc:ProfileExecutionID>00000000</cbc:ProfileExecutionID>\n    <cbc:ID>AE-1</cbc:ID>\n    <cbc:UUID>4b6000ca-0128-4bdc-99a6-406f2909247f</cbc:UUID>\n    <cbc:IssueDate>2026-11-21</cbc:IssueDate>\n    <cbc:DueDate>2026-12-21</cbc:DueDate>\n    <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>\n    <cbc:DocumentCurrencyCode>AED</cbc:DocumentCurrencyCode>\n    <cac:AccountingSupplierParty>\n        <cac:Party>\n            <cbc:EndpointID schemeID=\"0235\">1357902468</cbc:EndpointID>\n            <cac:PostalAddress>\n                <cbc:StreetName>Sheikh Zayed Road</cbc:StreetName>\n                <cbc:CityName>Dubai</cbc:CityName>\n                <cbc:CountrySubentity>DXB</cbc:CountrySubentity>\n                <cac:Country>\n                    <cbc:IdentificationCode>AE</cbc:IdentificationCode>\n                </cac:Country>\n            </cac:PostalAddress>\n            <cac:PartyTaxScheme>\n                <cbc:CompanyID>135790246801003</cbc:CompanyID>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:PartyTaxScheme>\n            <cac:PartyLegalEntity>\n                <cbc:RegistrationName>iFynx Demo Trading LLC</cbc:RegistrationName>\n                <cbc:CompanyID schemeAgencyID=\"TL\" schemeAgencyName=\"Dubai Department of Economy and Tourism\">112345678900003</cbc:CompanyID>\n            </cac:PartyLegalEntity>\n        </cac:Party>\n    </cac:AccountingSupplierParty>\n    <cac:AccountingCustomerParty>\n        <cac:Party>\n            <cbc:EndpointID schemeID=\"0235\">1345678901</cbc:EndpointID>\n            <cac:PostalAddress>\n                <cbc:StreetName>Corniche Road</cbc:StreetName>\n                <cbc:CityName>Abu Dhabi</cbc:CityName>\n                <cbc:CountrySubentity>AUH</cbc:CountrySubentity>\n                <cac:Country>\n                    <cbc:IdentificationCode>AE</cbc:IdentificationCode>\n                </cac:Country>\n            </cac:PostalAddress>\n            <cac:PartyTaxScheme>\n                <cbc:CompanyID>134567890123003</cbc:CompanyID>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:PartyTaxScheme>\n            <cac:PartyLegalEntity>\n                <cbc:RegistrationName>Sample Customer LLC</cbc:RegistrationName>\n                <cbc:CompanyID schemeAgencyID=\"TL\" schemeAgencyName=\"Abu Dhabi Department of Economic Development\">112345679000001</cbc:CompanyID>\n            </cac:PartyLegalEntity>\n        </cac:Party>\n    </cac:AccountingCustomerParty>\n    <cac:PaymentMeans>\n        <cbc:PaymentMeansCode name=\"Credit transfer\">30</cbc:PaymentMeansCode>\n        <cac:PayeeFinancialAccount>\n            <cbc:ID>AE070331234567890123456</cbc:ID>\n        </cac:PayeeFinancialAccount>\n    </cac:PaymentMeans>\n    <cac:TaxTotal>\n        <cbc:TaxAmount currencyID=\"AED\">362.50</cbc:TaxAmount>\n        <cac:TaxSubtotal>\n            <cbc:TaxableAmount currencyID=\"AED\">7250.00</cbc:TaxableAmount>\n            <cbc:TaxAmount currencyID=\"AED\">362.50</cbc:TaxAmount>\n            <cac:TaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:TaxCategory>\n        </cac:TaxSubtotal>\n    </cac:TaxTotal>\n    <cac:LegalMonetaryTotal>\n        <cbc:LineExtensionAmount currencyID=\"AED\">7250.00</cbc:LineExtensionAmount>\n        <cbc:TaxExclusiveAmount currencyID=\"AED\">7250.00</cbc:TaxExclusiveAmount>\n        <cbc:TaxInclusiveAmount currencyID=\"AED\">7612.50</cbc:TaxInclusiveAmount>\n        <cbc:PayableAmount currencyID=\"AED\">7612.50</cbc:PayableAmount>\n    </cac:LegalMonetaryTotal>\n    <cac:InvoiceLine>\n        <cbc:ID>1</cbc:ID>\n        <cbc:InvoicedQuantity unitCode=\"H87\">2</cbc:InvoicedQuantity>\n        <cbc:LineExtensionAmount currencyID=\"AED\">6400.00</cbc:LineExtensionAmount>\n        <cac:Item>\n            <cbc:Description>Laptop computer</cbc:Description>\n            <cbc:Name>Laptop computer</cbc:Name>\n            <cac:CommodityClassification>\n                <cbc:CommodityCode>G</cbc:CommodityCode>\n                <cbc:ItemClassificationCode listID=\"HS\">847130</cbc:ItemClassificationCode>\n            </cac:CommodityClassification>\n            <cac:ClassifiedTaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:ClassifiedTaxCategory>\n        </cac:Item>\n        <cac:Price>\n            <cbc:PriceAmount currencyID=\"AED\">3200.00</cbc:PriceAmount>\n            <cbc:BaseQuantity unitCode=\"H87\">1</cbc:BaseQuantity>\n            <cac:AllowanceCharge>\n                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>\n                <cbc:Amount currencyID=\"AED\">0.00</cbc:Amount>\n                <cbc:BaseAmount currencyID=\"AED\">3200.00</cbc:BaseAmount>\n            </cac:AllowanceCharge>\n        </cac:Price>\n        <cac:ItemPriceExtension>\n            <cbc:Amount currencyID=\"AED\">6720.00</cbc:Amount>\n            <cac:TaxTotal>\n                <cbc:TaxAmount currencyID=\"AED\">320.00</cbc:TaxAmount>\n            </cac:TaxTotal>\n        </cac:ItemPriceExtension>\n    </cac:InvoiceLine>\n    <cac:InvoiceLine>\n        <cbc:ID>2</cbc:ID>\n        <cbc:InvoicedQuantity unitCode=\"H87\">1</cbc:InvoicedQuantity>\n        <cbc:LineExtensionAmount currencyID=\"AED\">850.00</cbc:LineExtensionAmount>\n        <cac:Item>\n            <cbc:Description>Laser printer</cbc:Description>\n            <cbc:Name>Laser printer</cbc:Name>\n            <cac:CommodityClassification>\n                <cbc:CommodityCode>G</cbc:CommodityCode>\n                <cbc:ItemClassificationCode listID=\"HS\">844332</cbc:ItemClassificationCode>\n            </cac:CommodityClassification>\n            <cac:ClassifiedTaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:ClassifiedTaxCategory>\n        </cac:Item>\n        <cac:Price>\n            <cbc:PriceAmount currencyID=\"AED\">850.00</cbc:PriceAmount>\n            <cbc:BaseQuantity unitCode=\"H87\">1</cbc:BaseQuantity>\n            <cac:AllowanceCharge>\n                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>\n                <cbc:Amount currencyID=\"AED\">0.00</cbc:Amount>\n                <cbc:BaseAmount currencyID=\"AED\">850.00</cbc:BaseAmount>\n            </cac:AllowanceCharge>\n        </cac:Price>\n        <cac:ItemPriceExtension>\n            <cbc:Amount currencyID=\"AED\">892.50</cbc:Amount>\n            <cac:TaxTotal>\n                <cbc:TaxAmount currencyID=\"AED\">42.50</cbc:TaxAmount>\n            </cac:TaxTotal>\n        </cac:ItemPriceExtension>\n    </cac:InvoiceLine>\n</Invoice>\n",
+   "check": [
+    {
+     "id": "ALIGNED-IBRP-001-AE",
+     "key": "spec",
+     "ok": true
+    },
+    {
+     "id": "IBR-154-AE",
+     "key": "flags",
+     "ok": true
+    },
+    {
+     "id": "IBR-132-AE",
+     "key": "trn",
+     "ok": true
+    },
+    {
+     "id": "IBR-128-AE",
+     "key": "emirate",
+     "ok": true
+    },
+    {
+     "id": "IBR-143-AE",
+     "key": "address",
+     "ok": true
+    },
+    {
+     "id": "IBR-150-AE",
+     "key": "license",
+     "ok": true
+    },
+    {
+     "id": "IBR-193-AE",
+     "key": "uuid",
+     "ok": true
+    },
+    {
+     "id": "IBR-127-AE",
+     "key": "due",
+     "ok": true
+    },
+    {
+     "id": "IBR-192-AE",
+     "key": "iban",
+     "ok": true
+    },
+    {
+     "id": "IBR-125-AE",
+     "key": "items",
+     "ok": true
+    },
+    {
+     "id": "IBR-184-AE",
+     "key": "hs",
+     "ok": true
+    },
+    {
+     "id": "IBR-190-AE",
+     "key": "rate",
+     "ok": true
+    },
+    {
+     "id": "IBR-147-AE",
+     "key": "linemath",
+     "ok": true
+    },
+    {
+     "id": "IBR-194-AE",
+     "key": "aed",
+     "ok": true
+    },
+    {
+     "id": "IBR-CO-15",
+     "key": "totals",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "invoice": {
+    "uuid": "4b6000ca-0128-4bdc-99a6-406f2909247f",
+    "issueDate": "2026-11-21",
+    "dueDate": "2026-12-21",
+    "seller": {
+     "name": "iFynx Demo Trading LLC",
+     "trn": "135790246801003",
+     "license": "112345678900003",
+     "authority": "Dubai Department of Economy and Tourism",
+     "street": "Sheikh Zayed Road",
+     "city": "Dubai",
+     "emirate": "DXB",
+     "iban": "AE070331234567890123456"
+    },
+    "buyer": {
+     "name": "Sample Customer LLC",
+     "trn": "134567890123003",
+     "license": "112345679000001",
+     "authority": "Abu Dhabi Department of Economic Development",
+     "street": "Corniche Road",
+     "city": "Abu Dhabi",
+     "emirate": "AUH"
+    },
+    "number": "AE-2",
+    "lines": [
+     {
+      "name": "Cable",
+      "hs": "854442",
+      "qty": 3,
+      "price": 12.35
+     },
+     {
+      "name": "Adapter",
+      "hs": "850440",
+      "qty": 7,
+      "price": 9.99
+     },
+     {
+      "name": "Mouse",
+      "hs": "847160",
+      "qty": 1,
+      "price": 0.07,
+      "desc": "Wireless \"mouse\" <USB>"
+     }
+    ]
+   },
+   "totals": {
+    "rows": [
+     {
+      "name": "Cable",
+      "hs": "854442",
+      "qty": 3,
+      "price": 12.35,
+      "net": 37.05,
+      "vat": 1.85,
+      "gross": 38.9
+     },
+     {
+      "name": "Adapter",
+      "hs": "850440",
+      "qty": 7,
+      "price": 9.99,
+      "net": 69.93,
+      "vat": 3.5,
+      "gross": 73.43
+     },
+     {
+      "name": "Mouse",
+      "hs": "847160",
+      "qty": 1,
+      "price": 0.07,
+      "desc": "Wireless \"mouse\" <USB>",
+      "net": 0.07,
+      "vat": 0,
+      "gross": 0.07
+     }
+    ],
+    "net": 107.05,
+    "vat": 5.35,
+    "gross": 112.4
+   },
+   "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\">\n    <cbc:CustomizationID>urn:peppol:pint:billing-1@ae-1</cbc:CustomizationID>\n    <cbc:ProfileID>urn:peppol:bis:billing</cbc:ProfileID>\n    <cbc:ProfileExecutionID>00000000</cbc:ProfileExecutionID>\n    <cbc:ID>AE-2</cbc:ID>\n    <cbc:UUID>4b6000ca-0128-4bdc-99a6-406f2909247f</cbc:UUID>\n    <cbc:IssueDate>2026-11-21</cbc:IssueDate>\n    <cbc:DueDate>2026-12-21</cbc:DueDate>\n    <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>\n    <cbc:DocumentCurrencyCode>AED</cbc:DocumentCurrencyCode>\n    <cac:AccountingSupplierParty>\n        <cac:Party>\n            <cbc:EndpointID schemeID=\"0235\">1357902468</cbc:EndpointID>\n            <cac:PostalAddress>\n                <cbc:StreetName>Sheikh Zayed Road</cbc:StreetName>\n                <cbc:CityName>Dubai</cbc:CityName>\n                <cbc:CountrySubentity>DXB</cbc:CountrySubentity>\n                <cac:Country>\n                    <cbc:IdentificationCode>AE</cbc:IdentificationCode>\n                </cac:Country>\n            </cac:PostalAddress>\n            <cac:PartyTaxScheme>\n                <cbc:CompanyID>135790246801003</cbc:CompanyID>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:PartyTaxScheme>\n            <cac:PartyLegalEntity>\n                <cbc:RegistrationName>iFynx Demo Trading LLC</cbc:RegistrationName>\n                <cbc:CompanyID schemeAgencyID=\"TL\" schemeAgencyName=\"Dubai Department of Economy and Tourism\">112345678900003</cbc:CompanyID>\n            </cac:PartyLegalEntity>\n        </cac:Party>\n    </cac:AccountingSupplierParty>\n    <cac:AccountingCustomerParty>\n        <cac:Party>\n            <cbc:EndpointID schemeID=\"0235\">1345678901</cbc:EndpointID>\n            <cac:PostalAddress>\n                <cbc:StreetName>Corniche Road</cbc:StreetName>\n                <cbc:CityName>Abu Dhabi</cbc:CityName>\n                <cbc:CountrySubentity>AUH</cbc:CountrySubentity>\n                <cac:Country>\n                    <cbc:IdentificationCode>AE</cbc:IdentificationCode>\n                </cac:Country>\n            </cac:PostalAddress>\n            <cac:PartyTaxScheme>\n                <cbc:CompanyID>134567890123003</cbc:CompanyID>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:PartyTaxScheme>\n            <cac:PartyLegalEntity>\n                <cbc:RegistrationName>Sample Customer LLC</cbc:RegistrationName>\n                <cbc:CompanyID schemeAgencyID=\"TL\" schemeAgencyName=\"Abu Dhabi Department of Economic Development\">112345679000001</cbc:CompanyID>\n            </cac:PartyLegalEntity>\n        </cac:Party>\n    </cac:AccountingCustomerParty>\n    <cac:PaymentMeans>\n        <cbc:PaymentMeansCode name=\"Credit transfer\">30</cbc:PaymentMeansCode>\n        <cac:PayeeFinancialAccount>\n            <cbc:ID>AE070331234567890123456</cbc:ID>\n        </cac:PayeeFinancialAccount>\n    </cac:PaymentMeans>\n    <cac:TaxTotal>\n        <cbc:TaxAmount currencyID=\"AED\">5.35</cbc:TaxAmount>\n        <cac:TaxSubtotal>\n            <cbc:TaxableAmount currencyID=\"AED\">107.05</cbc:TaxableAmount>\n            <cbc:TaxAmount currencyID=\"AED\">5.35</cbc:TaxAmount>\n            <cac:TaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:TaxCategory>\n        </cac:TaxSubtotal>\n    </cac:TaxTotal>\n    <cac:LegalMonetaryTotal>\n        <cbc:LineExtensionAmount currencyID=\"AED\">107.05</cbc:LineExtensionAmount>\n        <cbc:TaxExclusiveAmount currencyID=\"AED\">107.05</cbc:TaxExclusiveAmount>\n        <cbc:TaxInclusiveAmount currencyID=\"AED\">112.40</cbc:TaxInclusiveAmount>\n        <cbc:PayableAmount currencyID=\"AED\">112.40</cbc:PayableAmount>\n    </cac:LegalMonetaryTotal>\n    <cac:InvoiceLine>\n        <cbc:ID>1</cbc:ID>\n        <cbc:InvoicedQuantity unitCode=\"H87\">3</cbc:InvoicedQuantity>\n        <cbc:LineExtensionAmount currencyID=\"AED\">37.05</cbc:LineExtensionAmount>\n        <cac:Item>\n            <cbc:Description>Cable</cbc:Description>\n            <cbc:Name>Cable</cbc:Name>\n            <cac:CommodityClassification>\n                <cbc:CommodityCode>G</cbc:CommodityCode>\n                <cbc:ItemClassificationCode listID=\"HS\">854442</cbc:ItemClassificationCode>\n            </cac:CommodityClassification>\n            <cac:ClassifiedTaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:ClassifiedTaxCategory>\n        </cac:Item>\n        <cac:Price>\n            <cbc:PriceAmount currencyID=\"AED\">12.35</cbc:PriceAmount>\n            <cbc:BaseQuantity unitCode=\"H87\">1</cbc:BaseQuantity>\n            <cac:AllowanceCharge>\n                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>\n                <cbc:Amount currencyID=\"AED\">0.00</cbc:Amount>\n                <cbc:BaseAmount currencyID=\"AED\">12.35</cbc:BaseAmount>\n            </cac:AllowanceCharge>\n        </cac:Price>\n        <cac:ItemPriceExtension>\n            <cbc:Amount currencyID=\"AED\">38.90</cbc:Amount>\n            <cac:TaxTotal>\n                <cbc:TaxAmount currencyID=\"AED\">1.85</cbc:TaxAmount>\n            </cac:TaxTotal>\n        </cac:ItemPriceExtension>\n    </cac:InvoiceLine>\n    <cac:InvoiceLine>\n        <cbc:ID>2</cbc:ID>\n        <cbc:InvoicedQuantity unitCode=\"H87\">7</cbc:InvoicedQuantity>\n        <cbc:LineExtensionAmount currencyID=\"AED\">69.93</cbc:LineExtensionAmount>\n        <cac:Item>\n            <cbc:Description>Adapter</cbc:Description>\n            <cbc:Name>Adapter</cbc:Name>\n            <cac:CommodityClassification>\n                <cbc:CommodityCode>G</cbc:CommodityCode>\n                <cbc:ItemClassificationCode listID=\"HS\">850440</cbc:ItemClassificationCode>\n            </cac:CommodityClassification>\n            <cac:ClassifiedTaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:ClassifiedTaxCategory>\n        </cac:Item>\n        <cac:Price>\n            <cbc:PriceAmount currencyID=\"AED\">9.99</cbc:PriceAmount>\n            <cbc:BaseQuantity unitCode=\"H87\">1</cbc:BaseQuantity>\n            <cac:AllowanceCharge>\n                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>\n                <cbc:Amount currencyID=\"AED\">0.00</cbc:Amount>\n                <cbc:BaseAmount currencyID=\"AED\">9.99</cbc:BaseAmount>\n            </cac:AllowanceCharge>\n        </cac:Price>\n        <cac:ItemPriceExtension>\n            <cbc:Amount currencyID=\"AED\">73.43</cbc:Amount>\n            <cac:TaxTotal>\n                <cbc:TaxAmount currencyID=\"AED\">3.50</cbc:TaxAmount>\n            </cac:TaxTotal>\n        </cac:ItemPriceExtension>\n    </cac:InvoiceLine>\n    <cac:InvoiceLine>\n        <cbc:ID>3</cbc:ID>\n        <cbc:InvoicedQuantity unitCode=\"H87\">1</cbc:InvoicedQuantity>\n        <cbc:LineExtensionAmount currencyID=\"AED\">0.07</cbc:LineExtensionAmount>\n        <cac:Item>\n            <cbc:Description>Wireless &quot;mouse&quot; &lt;USB&gt;</cbc:Description>\n            <cbc:Name>Mouse</cbc:Name>\n            <cac:CommodityClassification>\n                <cbc:CommodityCode>G</cbc:CommodityCode>\n                <cbc:ItemClassificationCode listID=\"HS\">847160</cbc:ItemClassificationCode>\n            </cac:CommodityClassification>\n            <cac:ClassifiedTaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:ClassifiedTaxCategory>\n        </cac:Item>\n        <cac:Price>\n            <cbc:PriceAmount currencyID=\"AED\">0.07</cbc:PriceAmount>\n            <cbc:BaseQuantity unitCode=\"H87\">1</cbc:BaseQuantity>\n            <cac:AllowanceCharge>\n                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>\n                <cbc:Amount currencyID=\"AED\">0.00</cbc:Amount>\n                <cbc:BaseAmount currencyID=\"AED\">0.07</cbc:BaseAmount>\n            </cac:AllowanceCharge>\n        </cac:Price>\n        <cac:ItemPriceExtension>\n            <cbc:Amount currencyID=\"AED\">0.07</cbc:Amount>\n            <cac:TaxTotal>\n                <cbc:TaxAmount currencyID=\"AED\">0.00</cbc:TaxAmount>\n            </cac:TaxTotal>\n        </cac:ItemPriceExtension>\n    </cac:InvoiceLine>\n</Invoice>\n",
+   "check": [
+    {
+     "id": "ALIGNED-IBRP-001-AE",
+     "key": "spec",
+     "ok": true
+    },
+    {
+     "id": "IBR-154-AE",
+     "key": "flags",
+     "ok": true
+    },
+    {
+     "id": "IBR-132-AE",
+     "key": "trn",
+     "ok": true
+    },
+    {
+     "id": "IBR-128-AE",
+     "key": "emirate",
+     "ok": true
+    },
+    {
+     "id": "IBR-143-AE",
+     "key": "address",
+     "ok": true
+    },
+    {
+     "id": "IBR-150-AE",
+     "key": "license",
+     "ok": true
+    },
+    {
+     "id": "IBR-193-AE",
+     "key": "uuid",
+     "ok": true
+    },
+    {
+     "id": "IBR-127-AE",
+     "key": "due",
+     "ok": true
+    },
+    {
+     "id": "IBR-192-AE",
+     "key": "iban",
+     "ok": true
+    },
+    {
+     "id": "IBR-125-AE",
+     "key": "items",
+     "ok": true
+    },
+    {
+     "id": "IBR-184-AE",
+     "key": "hs",
+     "ok": true
+    },
+    {
+     "id": "IBR-190-AE",
+     "key": "rate",
+     "ok": true
+    },
+    {
+     "id": "IBR-147-AE",
+     "key": "linemath",
+     "ok": true
+    },
+    {
+     "id": "IBR-194-AE",
+     "key": "aed",
+     "ok": true
+    },
+    {
+     "id": "IBR-CO-15",
+     "key": "totals",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "invoice": {
+    "uuid": "4b6000ca-0128-4bdc-99a6-406f2909247f",
+    "issueDate": "2026-11-21",
+    "dueDate": "2026-12-21",
+    "seller": {
+     "name": "آيفينيكس للتجارة ذ.م.م",
+     "trn": "135790246801003",
+     "license": "112345678900003",
+     "authority": "Dubai Department of Economy and Tourism",
+     "street": "Sheikh Zayed Road",
+     "city": "دبي",
+     "emirate": "DXB",
+     "iban": "AE070331234567890123456"
+    },
+    "buyer": {
+     "name": "Sample Customer LLC",
+     "trn": "134567890123003",
+     "license": "112345679000001",
+     "authority": "Abu Dhabi Department of Economic Development",
+     "street": "Corniche Road",
+     "city": "Abu Dhabi",
+     "emirate": "AUH"
+    },
+    "number": "AE-3",
+    "lines": [
+     {
+      "name": "حاسوب محمول",
+      "hs": "847130",
+      "qty": 1,
+      "price": 2999.95
+     }
+    ]
+   },
+   "totals": {
+    "rows": [
+     {
+      "name": "حاسوب محمول",
+      "hs": "847130",
+      "qty": 1,
+      "price": 2999.95,
+      "net": 2999.95,
+      "vat": 150,
+      "gross": 3149.95
+     }
+    ],
+    "net": 2999.95,
+    "vat": 150,
+    "gross": 3149.95
+   },
+   "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\">\n    <cbc:CustomizationID>urn:peppol:pint:billing-1@ae-1</cbc:CustomizationID>\n    <cbc:ProfileID>urn:peppol:bis:billing</cbc:ProfileID>\n    <cbc:ProfileExecutionID>00000000</cbc:ProfileExecutionID>\n    <cbc:ID>AE-3</cbc:ID>\n    <cbc:UUID>4b6000ca-0128-4bdc-99a6-406f2909247f</cbc:UUID>\n    <cbc:IssueDate>2026-11-21</cbc:IssueDate>\n    <cbc:DueDate>2026-12-21</cbc:DueDate>\n    <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>\n    <cbc:DocumentCurrencyCode>AED</cbc:DocumentCurrencyCode>\n    <cac:AccountingSupplierParty>\n        <cac:Party>\n            <cbc:EndpointID schemeID=\"0235\">1357902468</cbc:EndpointID>\n            <cac:PostalAddress>\n                <cbc:StreetName>Sheikh Zayed Road</cbc:StreetName>\n                <cbc:CityName>دبي</cbc:CityName>\n                <cbc:CountrySubentity>DXB</cbc:CountrySubentity>\n                <cac:Country>\n                    <cbc:IdentificationCode>AE</cbc:IdentificationCode>\n                </cac:Country>\n            </cac:PostalAddress>\n            <cac:PartyTaxScheme>\n                <cbc:CompanyID>135790246801003</cbc:CompanyID>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:PartyTaxScheme>\n            <cac:PartyLegalEntity>\n                <cbc:RegistrationName>آيفينيكس للتجارة ذ.م.م</cbc:RegistrationName>\n                <cbc:CompanyID schemeAgencyID=\"TL\" schemeAgencyName=\"Dubai Department of Economy and Tourism\">112345678900003</cbc:CompanyID>\n            </cac:PartyLegalEntity>\n        </cac:Party>\n    </cac:AccountingSupplierParty>\n    <cac:AccountingCustomerParty>\n        <cac:Party>\n            <cbc:EndpointID schemeID=\"0235\">1345678901</cbc:EndpointID>\n            <cac:PostalAddress>\n                <cbc:StreetName>Corniche Road</cbc:StreetName>\n                <cbc:CityName>Abu Dhabi</cbc:CityName>\n                <cbc:CountrySubentity>AUH</cbc:CountrySubentity>\n                <cac:Country>\n                    <cbc:IdentificationCode>AE</cbc:IdentificationCode>\n                </cac:Country>\n            </cac:PostalAddress>\n            <cac:PartyTaxScheme>\n                <cbc:CompanyID>134567890123003</cbc:CompanyID>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:PartyTaxScheme>\n            <cac:PartyLegalEntity>\n                <cbc:RegistrationName>Sample Customer LLC</cbc:RegistrationName>\n                <cbc:CompanyID schemeAgencyID=\"TL\" schemeAgencyName=\"Abu Dhabi Department of Economic Development\">112345679000001</cbc:CompanyID>\n            </cac:PartyLegalEntity>\n        </cac:Party>\n    </cac:AccountingCustomerParty>\n    <cac:PaymentMeans>\n        <cbc:PaymentMeansCode name=\"Credit transfer\">30</cbc:PaymentMeansCode>\n        <cac:PayeeFinancialAccount>\n            <cbc:ID>AE070331234567890123456</cbc:ID>\n        </cac:PayeeFinancialAccount>\n    </cac:PaymentMeans>\n    <cac:TaxTotal>\n        <cbc:TaxAmount currencyID=\"AED\">150.00</cbc:TaxAmount>\n        <cac:TaxSubtotal>\n            <cbc:TaxableAmount currencyID=\"AED\">2999.95</cbc:TaxableAmount>\n            <cbc:TaxAmount currencyID=\"AED\">150.00</cbc:TaxAmount>\n            <cac:TaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:TaxCategory>\n        </cac:TaxSubtotal>\n    </cac:TaxTotal>\n    <cac:LegalMonetaryTotal>\n        <cbc:LineExtensionAmount currencyID=\"AED\">2999.95</cbc:LineExtensionAmount>\n        <cbc:TaxExclusiveAmount currencyID=\"AED\">2999.95</cbc:TaxExclusiveAmount>\n        <cbc:TaxInclusiveAmount currencyID=\"AED\">3149.95</cbc:TaxInclusiveAmount>\n        <cbc:PayableAmount currencyID=\"AED\">3149.95</cbc:PayableAmount>\n    </cac:LegalMonetaryTotal>\n    <cac:InvoiceLine>\n        <cbc:ID>1</cbc:ID>\n        <cbc:InvoicedQuantity unitCode=\"H87\">1</cbc:InvoicedQuantity>\n        <cbc:LineExtensionAmount currencyID=\"AED\">2999.95</cbc:LineExtensionAmount>\n        <cac:Item>\n            <cbc:Description>حاسوب محمول</cbc:Description>\n            <cbc:Name>حاسوب محمول</cbc:Name>\n            <cac:CommodityClassification>\n                <cbc:CommodityCode>G</cbc:CommodityCode>\n                <cbc:ItemClassificationCode listID=\"HS\">847130</cbc:ItemClassificationCode>\n            </cac:CommodityClassification>\n            <cac:ClassifiedTaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:ClassifiedTaxCategory>\n        </cac:Item>\n        <cac:Price>\n            <cbc:PriceAmount currencyID=\"AED\">2999.95</cbc:PriceAmount>\n            <cbc:BaseQuantity unitCode=\"H87\">1</cbc:BaseQuantity>\n            <cac:AllowanceCharge>\n                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>\n                <cbc:Amount currencyID=\"AED\">0.00</cbc:Amount>\n                <cbc:BaseAmount currencyID=\"AED\">2999.95</cbc:BaseAmount>\n            </cac:AllowanceCharge>\n        </cac:Price>\n        <cac:ItemPriceExtension>\n            <cbc:Amount currencyID=\"AED\">3149.95</cbc:Amount>\n            <cac:TaxTotal>\n                <cbc:TaxAmount currencyID=\"AED\">150.00</cbc:TaxAmount>\n            </cac:TaxTotal>\n        </cac:ItemPriceExtension>\n    </cac:InvoiceLine>\n</Invoice>\n",
+   "check": [
+    {
+     "id": "ALIGNED-IBRP-001-AE",
+     "key": "spec",
+     "ok": true
+    },
+    {
+     "id": "IBR-154-AE",
+     "key": "flags",
+     "ok": true
+    },
+    {
+     "id": "IBR-132-AE",
+     "key": "trn",
+     "ok": true
+    },
+    {
+     "id": "IBR-128-AE",
+     "key": "emirate",
+     "ok": true
+    },
+    {
+     "id": "IBR-143-AE",
+     "key": "address",
+     "ok": true
+    },
+    {
+     "id": "IBR-150-AE",
+     "key": "license",
+     "ok": true
+    },
+    {
+     "id": "IBR-193-AE",
+     "key": "uuid",
+     "ok": true
+    },
+    {
+     "id": "IBR-127-AE",
+     "key": "due",
+     "ok": true
+    },
+    {
+     "id": "IBR-192-AE",
+     "key": "iban",
+     "ok": true
+    },
+    {
+     "id": "IBR-125-AE",
+     "key": "items",
+     "ok": true
+    },
+    {
+     "id": "IBR-184-AE",
+     "key": "hs",
+     "ok": true
+    },
+    {
+     "id": "IBR-190-AE",
+     "key": "rate",
+     "ok": true
+    },
+    {
+     "id": "IBR-147-AE",
+     "key": "linemath",
+     "ok": true
+    },
+    {
+     "id": "IBR-194-AE",
+     "key": "aed",
+     "ok": true
+    },
+    {
+     "id": "IBR-CO-15",
+     "key": "totals",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "invoice": {
+    "uuid": "4b6000ca-0128-4bdc-99a6-406f2909247f",
+    "issueDate": "2026-11-21",
+    "dueDate": "2026-11-01",
+    "seller": {
+     "name": "iFynx Demo Trading LLC",
+     "trn": "399999999900003",
+     "license": "112345678900003",
+     "authority": "Dubai Department of Economy and Tourism",
+     "street": "Sheikh Zayed Road",
+     "city": "Dubai",
+     "emirate": "XXX",
+     "iban": "SA00"
+    },
+    "buyer": {
+     "name": "Sample Customer LLC",
+     "trn": "134567890123003",
+     "license": "112345679000001",
+     "authority": "Abu Dhabi Department of Economic Development",
+     "street": "Corniche Road",
+     "city": "Abu Dhabi",
+     "emirate": "AUH"
+    },
+    "number": "AE-BAD",
+    "flags": "0101x",
+    "lines": [
+     {
+      "name": "Thing",
+      "hs": "12",
+      "qty": 1,
+      "price": 5
+     }
+    ]
+   },
+   "totals": {
+    "rows": [
+     {
+      "name": "Thing",
+      "hs": "12",
+      "qty": 1,
+      "price": 5,
+      "net": 5,
+      "vat": 0.25,
+      "gross": 5.25
+     }
+    ],
+    "net": 5,
+    "vat": 0.25,
+    "gross": 5.25
+   },
+   "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\">\n    <cbc:CustomizationID>urn:peppol:pint:billing-1@ae-1</cbc:CustomizationID>\n    <cbc:ProfileID>urn:peppol:bis:billing</cbc:ProfileID>\n    <cbc:ProfileExecutionID>0101x</cbc:ProfileExecutionID>\n    <cbc:ID>AE-BAD</cbc:ID>\n    <cbc:UUID>4b6000ca-0128-4bdc-99a6-406f2909247f</cbc:UUID>\n    <cbc:IssueDate>2026-11-21</cbc:IssueDate>\n    <cbc:DueDate>2026-11-01</cbc:DueDate>\n    <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>\n    <cbc:DocumentCurrencyCode>AED</cbc:DocumentCurrencyCode>\n    <cac:AccountingSupplierParty>\n        <cac:Party>\n            <cbc:EndpointID schemeID=\"0235\">3999999999</cbc:EndpointID>\n            <cac:PostalAddress>\n                <cbc:StreetName>Sheikh Zayed Road</cbc:StreetName>\n                <cbc:CityName>Dubai</cbc:CityName>\n                <cbc:CountrySubentity>XXX</cbc:CountrySubentity>\n                <cac:Country>\n                    <cbc:IdentificationCode>AE</cbc:IdentificationCode>\n                </cac:Country>\n            </cac:PostalAddress>\n            <cac:PartyTaxScheme>\n                <cbc:CompanyID>399999999900003</cbc:CompanyID>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:PartyTaxScheme>\n            <cac:PartyLegalEntity>\n                <cbc:RegistrationName>iFynx Demo Trading LLC</cbc:RegistrationName>\n                <cbc:CompanyID schemeAgencyID=\"TL\" schemeAgencyName=\"Dubai Department of Economy and Tourism\">112345678900003</cbc:CompanyID>\n            </cac:PartyLegalEntity>\n        </cac:Party>\n    </cac:AccountingSupplierParty>\n    <cac:AccountingCustomerParty>\n        <cac:Party>\n            <cbc:EndpointID schemeID=\"0235\">1345678901</cbc:EndpointID>\n            <cac:PostalAddress>\n                <cbc:StreetName>Corniche Road</cbc:StreetName>\n                <cbc:CityName>Abu Dhabi</cbc:CityName>\n                <cbc:CountrySubentity>AUH</cbc:CountrySubentity>\n                <cac:Country>\n                    <cbc:IdentificationCode>AE</cbc:IdentificationCode>\n                </cac:Country>\n            </cac:PostalAddress>\n            <cac:PartyTaxScheme>\n                <cbc:CompanyID>134567890123003</cbc:CompanyID>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:PartyTaxScheme>\n            <cac:PartyLegalEntity>\n                <cbc:RegistrationName>Sample Customer LLC</cbc:RegistrationName>\n                <cbc:CompanyID schemeAgencyID=\"TL\" schemeAgencyName=\"Abu Dhabi Department of Economic Development\">112345679000001</cbc:CompanyID>\n            </cac:PartyLegalEntity>\n        </cac:Party>\n    </cac:AccountingCustomerParty>\n    <cac:PaymentMeans>\n        <cbc:PaymentMeansCode name=\"Credit transfer\">30</cbc:PaymentMeansCode>\n        <cac:PayeeFinancialAccount>\n            <cbc:ID>SA00</cbc:ID>\n        </cac:PayeeFinancialAccount>\n    </cac:PaymentMeans>\n    <cac:TaxTotal>\n        <cbc:TaxAmount currencyID=\"AED\">0.25</cbc:TaxAmount>\n        <cac:TaxSubtotal>\n            <cbc:TaxableAmount currencyID=\"AED\">5.00</cbc:TaxableAmount>\n            <cbc:TaxAmount currencyID=\"AED\">0.25</cbc:TaxAmount>\n            <cac:TaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:TaxCategory>\n        </cac:TaxSubtotal>\n    </cac:TaxTotal>\n    <cac:LegalMonetaryTotal>\n        <cbc:LineExtensionAmount currencyID=\"AED\">5.00</cbc:LineExtensionAmount>\n        <cbc:TaxExclusiveAmount currencyID=\"AED\">5.00</cbc:TaxExclusiveAmount>\n        <cbc:TaxInclusiveAmount currencyID=\"AED\">5.25</cbc:TaxInclusiveAmount>\n        <cbc:PayableAmount currencyID=\"AED\">5.25</cbc:PayableAmount>\n    </cac:LegalMonetaryTotal>\n    <cac:InvoiceLine>\n        <cbc:ID>1</cbc:ID>\n        <cbc:InvoicedQuantity unitCode=\"H87\">1</cbc:InvoicedQuantity>\n        <cbc:LineExtensionAmount currencyID=\"AED\">5.00</cbc:LineExtensionAmount>\n        <cac:Item>\n            <cbc:Description>Thing</cbc:Description>\n            <cbc:Name>Thing</cbc:Name>\n            <cac:CommodityClassification>\n                <cbc:CommodityCode>G</cbc:CommodityCode>\n                <cbc:ItemClassificationCode listID=\"HS\">12</cbc:ItemClassificationCode>\n            </cac:CommodityClassification>\n            <cac:ClassifiedTaxCategory>\n                <cbc:ID>S</cbc:ID>\n                <cbc:Percent>5</cbc:Percent>\n                <cac:TaxScheme>\n                    <cbc:ID>VAT</cbc:ID>\n                </cac:TaxScheme>\n            </cac:ClassifiedTaxCategory>\n        </cac:Item>\n        <cac:Price>\n            <cbc:PriceAmount currencyID=\"AED\">5.00</cbc:PriceAmount>\n            <cbc:BaseQuantity unitCode=\"H87\">1</cbc:BaseQuantity>\n            <cac:AllowanceCharge>\n                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>\n                <cbc:Amount currencyID=\"AED\">0.00</cbc:Amount>\n                <cbc:BaseAmount currencyID=\"AED\">5.00</cbc:BaseAmount>\n            </cac:AllowanceCharge>\n        </cac:Price>\n        <cac:ItemPriceExtension>\n            <cbc:Amount currencyID=\"AED\">5.25</cbc:Amount>\n            <cac:TaxTotal>\n                <cbc:TaxAmount currencyID=\"AED\">0.25</cbc:TaxAmount>\n            </cac:TaxTotal>\n        </cac:ItemPriceExtension>\n    </cac:InvoiceLine>\n</Invoice>\n",
+   "check": [
+    {
+     "id": "ALIGNED-IBRP-001-AE",
+     "key": "spec",
+     "ok": true
+    },
+    {
+     "id": "IBR-154-AE",
+     "key": "flags",
+     "ok": false
+    },
+    {
+     "id": "IBR-132-AE",
+     "key": "trn",
+     "ok": false
+    },
+    {
+     "id": "IBR-128-AE",
+     "key": "emirate",
+     "ok": false
+    },
+    {
+     "id": "IBR-143-AE",
+     "key": "address",
+     "ok": true
+    },
+    {
+     "id": "IBR-150-AE",
+     "key": "license",
+     "ok": true
+    },
+    {
+     "id": "IBR-193-AE",
+     "key": "uuid",
+     "ok": true
+    },
+    {
+     "id": "IBR-127-AE",
+     "key": "due",
+     "ok": false
+    },
+    {
+     "id": "IBR-192-AE",
+     "key": "iban",
+     "ok": false
+    },
+    {
+     "id": "IBR-125-AE",
+     "key": "items",
+     "ok": true
+    },
+    {
+     "id": "IBR-184-AE",
+     "key": "hs",
+     "ok": false
+    },
+    {
+     "id": "IBR-190-AE",
+     "key": "rate",
+     "ok": true
+    },
+    {
+     "id": "IBR-147-AE",
+     "key": "linemath",
+     "ok": true
+    },
+    {
+     "id": "IBR-194-AE",
+     "key": "aed",
+     "ok": true
+    },
+    {
+     "id": "IBR-CO-15",
+     "key": "totals",
+     "ok": true
+    }
+   ]
+  }
+ ],
+ "trn": [
+  {
+   "v": "100000000000003",
+   "ok": true,
+   "tin": "1000000000"
+  },
+  {
+   "v": "300000000000003",
+   "ok": false,
+   "tin": "3000000000"
+  },
+  {
+   "v": "10000000000003",
+   "ok": false,
+   "tin": "1000000000"
+  },
+  {
+   "v": "135790246801003",
+   "ok": true,
+   "tin": "1357902468"
+  }
+ ]
+}

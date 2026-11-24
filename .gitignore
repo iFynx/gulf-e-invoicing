@@ -3,3 +3,11 @@ out/
 .cache/
 *.log
 .DS_Store
+vendor/
+composer.lock
+python/dist/
+python/build/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.phpunit.cache/
