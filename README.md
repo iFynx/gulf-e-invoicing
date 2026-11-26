@@ -13,6 +13,11 @@ One engine, three languages: JavaScript, Python and PHP, tested to produce ident
 ![ZATCA](https://img.shields.io/badge/ZATCA-Phase%202-0E7C3A)
 ![UAE](https://img.shields.io/badge/UAE-PINT%20AE%201.0.5-C8102E)
 
+[![npm @ifynx/zatca-phase2](https://img.shields.io/npm/v/@ifynx/zatca-phase2?label=npm%20%40ifynx%2Fzatca-phase2&color=CB3837)](https://www.npmjs.com/package/@ifynx/zatca-phase2)
+[![npm @ifynx/uae-pint-ae](https://img.shields.io/npm/v/@ifynx/uae-pint-ae?label=npm%20%40ifynx%2Fuae-pint-ae&color=CB3837)](https://www.npmjs.com/package/@ifynx/uae-pint-ae)
+[![PyPI gulf-einvoicing](https://img.shields.io/pypi/v/gulf-einvoicing?label=PyPI%20gulf-einvoicing&color=3776AB)](https://pypi.org/project/gulf-einvoicing/)
+[![Packagist ifynx/gulf-e-invoicing](https://img.shields.io/packagist/v/ifynx/gulf-e-invoicing?label=Packagist%20ifynx%2Fgulf-e-invoicing&color=F28D1A)](https://packagist.org/packages/ifynx/gulf-e-invoicing)
+
 [English](#english) · [العربية](#العربية) · [Live demos](#live-demos)
 
 </div>
@@ -34,11 +39,11 @@ No network calls, no telemetry, no tracking. Your invoice data never leaves the 
 
 ## Install
 
-| Language | Package | Install |
-|---|---|---|
-| JavaScript / TypeScript | [`@ifynx/zatca-phase2`](zatca), [`@ifynx/uae-pint-ae`](uae-pint-ae) | `npm install @ifynx/zatca-phase2 @ifynx/uae-pint-ae` |
-| Python 3.10+ | [`gulf-einvoicing`](python) | `pip install gulf-einvoicing` |
-| PHP 8.1+ (Laravel, Symfony, WooCommerce) | [`ifynx/gulf-e-invoicing`](php) | `composer require ifynx/gulf-e-invoicing` |
+| Language | Package | Registry | Install |
+|---|---|---|---|
+| JavaScript / TypeScript | [`@ifynx/zatca-phase2`](zatca), [`@ifynx/uae-pint-ae`](uae-pint-ae) | npm: [zatca-phase2](https://www.npmjs.com/package/@ifynx/zatca-phase2), [uae-pint-ae](https://www.npmjs.com/package/@ifynx/uae-pint-ae) | `npm install @ifynx/zatca-phase2 @ifynx/uae-pint-ae` |
+| Python 3.10+ | [`gulf-einvoicing`](python) | [PyPI](https://pypi.org/project/gulf-einvoicing/) | `pip install gulf-einvoicing` |
+| PHP 8.1+ (Laravel, Symfony, WooCommerce) | [`ifynx/gulf-e-invoicing`](php) | [Packagist](https://packagist.org/packages/ifynx/gulf-e-invoicing) | `composer require ifynx/gulf-e-invoicing` |
 
 All three ports are checked against the same [test vectors](test-vectors): the XML, invoice hash, XAdES properties and QR payload must match **byte for byte**. JavaScript and Python even produce the same signature bytes (RFC 6979 deterministic ECDSA with low-S); PHP signs through OpenSSL and is verified against the same key.
 
@@ -202,6 +207,8 @@ npm install @ifynx/zatca-phase2 @ifynx/uae-pint-ae   # JavaScript
 pip install gulf-einvoicing                          # Python
 composer require ifynx/gulf-e-invoicing              # PHP
 ```
+
+صفحات الحزم: npm ([zatca-phase2](https://www.npmjs.com/package/@ifynx/zatca-phase2)، [uae-pint-ae](https://www.npmjs.com/package/@ifynx/uae-pint-ae)) · [PyPI](https://pypi.org/project/gulf-einvoicing/) · [Packagist](https://packagist.org/packages/ifynx/gulf-e-invoicing).
 
 النسخ الثلاث تُختبر على نفس الفواتير المرجعية، ويجب أن تُخرج نفس الـ XML ونفس البصمة ونفس رمز QR حرفاً بحرف.
 
